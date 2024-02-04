@@ -17,6 +17,12 @@ export interface KHADataType {
   recommendationsList: string[];
 }
 
+export const MMAURL = "https://www.melon.com/mma/result.htm?mmaYear=2023"; //2005~2023
+export const KHAURL =
+  "https://www.koreanhiphopawards.com/2023/2023winners.html";
+export const AAAURL = "https://www.asiaartistawards.com/winner/2023"; //2026~2023
+export const GDAURL = "https://www.goldendisc.co.kr/ko/history/2022"; //1995~2023
+
 export const getMMAData = async (url: string): Promise<MMADataType[]> => {
   try {
     const { data } = await axios.get(url);
@@ -63,12 +69,10 @@ export const getKHAData = async (url: string): Promise<KHADataType[]> => {
 };
 
 export default async function Home() {
-  const MMAData: MMADataType[] = await getMMAData(
-    "https://www.melon.com/mma/result.htm?mmaYear=2023" //2005~2023
-  );
-  const KHAData: KHADataType[] = await getKHAData(
-    "https://www.koreanhiphopawards.com/2023/2023winners.html"
-  );
+  const MMAData: MMADataType[] = await getMMAData(MMAURL);
+  const KHAData: KHADataType[] = await getKHAData(KHAURL);
+  const AAAData: KHADataType[] = await getKHAData(AAAURL);
+  const GDAData: KHADataType[] = await getKHAData(GDAURL);
   console.log(MMAData, KHAData);
 
   return (
