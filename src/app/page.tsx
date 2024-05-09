@@ -13,9 +13,6 @@ import {
   getMMAData,
 } from "korean-music-awards";
 
-export const AAAURL = "https://www.asiaartistawards.com/winner/2023"; //2026~2023
-export const GDAURL = "https://www.goldendisc.co.kr/ko/history/2022"; //1995~2023
-
 export default async function Home() {
   // const KHAData: KHADataType[] = await getKHAData(KHAURL);
   // const AAAData: KHADataType[] = await getKHAData(AAAURL);
